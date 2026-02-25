@@ -3,6 +3,11 @@ variable "project_id" {
   type        = string
 }
 
+variable "github_owner" {
+  description = "The GitHub organization or user that owns the repo"
+  type        = string
+}
+
 variable "triggers" {
   description = "Map of Cloud Build triggers"
   type = map(object({
