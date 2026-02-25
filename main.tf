@@ -1,6 +1,6 @@
 module "cloudbuild_triggers" {
-  source     = "./modules/cloudbuild_trigger"
-  for_each   = var.triggers
+  source   = "./modules/cloudbuild_trigger"
+  for_each = var.triggers
 
   name           = each.key
   description    = each.value.description

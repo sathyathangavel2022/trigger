@@ -1,10 +1,12 @@
 project_id = "playground-adnan"
+github_owner = "sathyathangavel2022"
 
 triggers = {
   cicd = {
-    repo_name      = "cicd"                 # GitHub repo name connected to Cloud Build
-    branch_pattern = "main"                 # branch to watch
+    repo_name      = "cicd"
+    branch_pattern = "main"
     description    = "Trigger for CICD repo"
-    filename       = "cloudbuild.yaml"      # pipeline file inside cicd repo
+    filename       = "cloudbuild.yaml"
   }
 }
+

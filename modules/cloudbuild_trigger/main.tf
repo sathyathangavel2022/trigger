@@ -3,13 +3,13 @@ resource "google_cloudbuild_trigger" "trigger" {
   description = var.description
   project     = var.project_id
 
-  source_to_build {
-    repo_source {
-      project_id  = var.project_id
-      repo_name   = var.repo_name   # points to cicd repo
-      branch_name = var.branch_pattern
+  github {
+    owner       = var.github_owner      # e.g. "sathyathangavel2022"
+    name        = var.repo_name         # e.g. "cicd"
+    push {
+      branch = var.branch_pattern       # e.g. "main"
     }
   }
 
-  filename = var.filename           # cloudbuild.yaml inside cicd repo
+  filename = var.filename               # points to cloudbuild.yaml in cicd repo
 }
