@@ -1,3 +1,19 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "~> 5.0"
+    }
+  }
+}
+
+provider "google" {
+  project = var.project_id
+  region  = "me-central2"   # or your preferred region
+}
+
+
+
 module "cloudbuild_triggers" {
   source     = "./modules/cloudbuild_trigger"
   for_each   = var.triggers
