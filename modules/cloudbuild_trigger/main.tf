@@ -2,6 +2,7 @@ resource "google_cloudbuild_trigger" "trigger" {
   name        = "${var.name}-trigger"
   description = var.description
   project     = var.project_id
+  location = var.location
 
   github {
     owner       = var.github_owner      # e.g. "sathyathangavel2022"
